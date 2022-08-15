@@ -1,8 +1,8 @@
 select * from animals where name like '%mon'
 
-select name from animals where date_of_birth between '2016-1-1' and '2019-1-1';
+SELECT name FROM animals WHERE EXTRACT(year FROM date_of_birth) BETWEEN 2016 AND 2019;
 
-select name from animals where date_of_birth between '2016-1-1' and '2019-1-1';
+select name from animals where neutered=true and escape_attempts < 3
 
 select date_of_birth from animals where name='Agumon' or name='Pikach';
 
