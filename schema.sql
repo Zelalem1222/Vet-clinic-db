@@ -6,3 +6,6 @@ create table animals
 	 neutered BOOLEAN,
 	 weight_kg decimal
    )
+ 
+   /* day-2 */
+   alter table animals add column species VARCHAR(50);
