@@ -20,7 +20,8 @@ create table animals
 
     create table species(
       id int GENERATED ALWAYS AS identity PRIMARY key, 
-      name VARCHAR(30))
+      name VARCHAR(30)
+    )
 
       
    alter table animals add primary key(id);
