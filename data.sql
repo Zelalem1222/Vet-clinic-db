@@ -45,7 +45,11 @@ values('Sam Smith',34),
   update animals set species_id=2 where name like '%mon';
   update animals set species_id=1 where name not like '%mon';   
   
-  update animals set owner_id=1 where id=12;
+   update animals 
+   set owner_id=(
+     select id from owners where owners.full_name='Sam Smith'
+       ) 
+   where id=12;
 
   update animals 
   set owner_id=(
