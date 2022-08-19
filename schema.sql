@@ -43,3 +43,27 @@ create table animals
    REFERENCES owners(id)
    on delete cascade;
 
+-- day-4
+
+create table vets
+  (id int generated always as identity PRIMARY key ,
+	name varchar(40),
+	age int ,
+  date_of_graduation date 
+				 );
+
+ 
+create table specializations (
+  vet_id int, 
+	species_id int,
+	FOREIGN key(vet_id)
+	REFERENCES vets(id),
+	FOREIGN key(species_id) 
+	REFERENCES species(id)
+ );
+
+ create table visits(
+  vet_id int, animal_id int,date_of_visit date,
+	FOREIGN key(vet_id) REFERENCES vets(id),
+	foreign key(animal_id) REFERENCES animals(id)
+);
