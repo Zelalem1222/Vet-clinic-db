@@ -75,3 +75,41 @@ values('Sam Smith',34),
     ) 
   where id=19 or id=20;
        
+
+  -- day-4
+
+  insert into vets(name,age,date_of_graduation)
+    values('William Tatcher',45,'2000-04-23'),
+          ('Maisy Smith',26,'2019-01-17'),
+		      ('Stephanie Mendez',64,'1981-05-04'),
+		      ('Jack Harkness',38,'2008-06-08');    
+
+   INSERT into specializations(vet_id,species_id)
+   values((select id from vets where name='William Tatcher'),(select id from species where name='Pokemon')),
+        ((select id from vets where name='Stephanie Mendez'),(select id from species where name='Pokemon')),
+        ((select id from vets where name='Stephanie Mendez'),(select id from species where name='Digimon')),
+        ((select id from vets where name='Jack Harkness'),(select id from species where name='Digimon'))
+
+
+    insert into visits(animal_id, vet_id,date_of_visit)
+       VALUES((select id from animals where name='Agumon'),(select id from vets WHERE name='William Tatcher'),'2020-05-24'),
+             ((select id from animals where name='Agumon'),(select id from vets WHERE name='Stephanie Mendez'),'2020-07-22')
+	           ((select id from animals where name='Gabumon'),(select id from vets WHERE name='Jack Harkness'),'2021-02-02'),
+	           ((select id from animals where name='Pikachu'),(select id from vets WHERE name='Maisy Smith'),'2020-01-05'),
+	           ((select id from animals where name='Pikachu'),(select id from vets WHERE name='Maisy Smith'),'2020-03-08'),
+	           ((select id from animals where name='Pikachu'),(select id from vets WHERE name='Maisy Smith'),'2020-05-14'),
+	           ((select id from animals where name='Devimon'),(select id from vets WHERE name='Stephanie Mendez'),'2021-05-04'),
+	           ((select id from animals where name='Charmander'),(select id from vets WHERE name='Jack Harkness'),'2021-02-24'),
+	           ((select id from animals where name='Plantmon'),(select id from vets WHERE name='Maisy Smith'),'2019-12-21'),
+	           ((select id from animals where name='Plantmon'),(select id from vets WHERE name='William Tatcher'),'2020-08-10'),
+	           ((select id from animals where name='Plantmon'),(select id from vets WHERE name='Maisy Smith'),'2021-04-07'),
+	           ((select id from animals where name='Squirtle'),(select id from vets WHERE name='Stephanie Mendez'),'2019-09-29'),
+	           ((select id from animals where name='Angemon'),(select id from vets WHERE name='Jack Harkness'),'2020-10-03'),
+	           ((select id from animals where name='Angemon'),(select id from vets WHERE name='Jack Harkness'),'2020-11-04'),
+	           ((select id from animals where name='Boarmon'),(select id from vets WHERE name='Maisy Smith'),'2019-01-24'),
+	           ((select id from animals where name='Boarmon'),(select id from vets WHERE name='Maisy Smith'),'2019-05-15'),
+	           ((select id from animals where name='Boarmon'),(select id from vets WHERE name='Maisy Smith'),'2020-02-27'),
+	           ((select id from animals where name='Boarmon'),(select id from vets WHERE name='Maisy Smith'),'2020-08-03'),
+	           ((select id from animals where name='Blossom'),(select id from vets WHERE name='Stephanie Mendez'),'2020-05-24'),
+	           ((select id from animals where name='Blossom'),(select id from vets WHERE name='William Tatcher'),'2021-01-11'),    
+               
